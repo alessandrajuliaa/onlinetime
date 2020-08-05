@@ -1,27 +1,67 @@
-let url = "http://worldtimeapi.org/api/timezone/America/Sao_Paulo";
 
-let showHours = document.querySelector('.containerHora');
-let milisegundos = 0;
+// VARIÁVEIS CRONOMETRO
+let hh = 0;
+let mm = 0;
+let ss = 0;
+let cronometro = 0;
 
-// fetch(url)
-//     .then((res) =>{
-//         return res.json()
-//     }).then((data)=>{
-//         console.log(data.datetime);
-//         console.log(data.utc_datetime);
-//         console.log(data.unixtime);
-//         h = data.unixtime;
-//     })
-let interval = setInterval(() => {
+// FUNÇÕES GERAIS
+function show(hora, minuto, segundo, hh, mm, ss){
+    hora.innerHTML = `${hh < 10 ? '0' + hh : hh}`;
+    minuto.innerHTML = `${mm < 10 ? '0' + mm : mm}`;
+    segundo.innerHTML = `${ss < 10 ? '0' + ss : ss}`;
+}
+// RELÓGIO FUNÇÕES
+function retornaData(url, showCronometroH, showCronometroM, showCronometroS){
     fetch(url)
     .then((res) =>{
         return res.json()
     }).then((data)=>{
-        milisegundos = (data.unixtime * 1000);
-    })
-let horaAtual = new Date(milisegundos)
-let horas = horaAtual.getUTCHours
-let minutos = horaAtual.getUTCMinutes
-let segundos = horaAtual.getUTCSeconds
-showHours.innerHTML = `${horaAtual.getHours() < 10 ? '0' + horaAtual.getHours() : horaAtual.getHours()}:${horaAtual.getMinutes() < 10 ? '0' + horaAtual.getMinutes() : horaAtual.getMinutes()}:${horaAtual.getSeconds() < 10 ? '0' + horaAtual.getSeconds() : horaAtual.getSeconds()}`;
-}, 1000);
+        let horaAtual = new Date(data.unixtime * 1000)
+        let hh = horaAtual.getHours();
+        let mm = horaAtual.getMinutes();
+        let ss = horaAtual.getSeconds();
+
+        show(showCronometroH, showCronometroM, showCronometroS, hh, mm, ss);
+    }) 
+}
+
+// CRONOMETRO FUNÇÕES
+function star(btnCronometroIniciar, btnCronometroPause, btnCronometroStop){
+    cronometro = setInterval(timer, 10);
+    btnCronometroIniciar.style.display = "none";
+    btnCronometroPause.style.display = "inline-block";
+    btnCronometroStop.style.display = "inline-block";
+}
+function pause(btnCronometroIniciar, btnCronometroPause, btnCronometroStop){
+    clearInterval(cronometro);
+    btnCronometroIniciar.style.display = "inline-block";
+    btnCronometroPause.style.display = "none";
+    btnCronometroStop.style.display = "inline-block";
+}
+function stop(btnCronometroIniciar, btnCronometroPause, btnCronometroStop){
+    clearInterval(cronometro);
+    cronometro = 0;
+    show(showCronometroH, showCronometroM, showCronometroS, 0, 0, 0);
+    hh = 0;
+    mm = 0;
+    ss = 0;
+    btnCronometroIniciar.style.display = "inline-block";
+    btnCronometroPause.style.display = "none";
+    btnCronometroStop.style.display = "none";
+}
+function timer(){
+    ss++;
+    if(ss == 60){
+        ss=0;
+        mm++;
+        if(mm == 60){
+            mm=0;
+            hh++;
+            if(hh == 24){
+                hh=0;
+            }
+        }
+    }
+    show(showCronometroH, showCronometroM, showCronometroS, hh, mm, ss);
+}

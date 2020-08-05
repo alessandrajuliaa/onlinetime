@@ -8,17 +8,115 @@
     <title>Online Time</title>
 </head>
 <body>
-    <header></header>
-    <main>
-        <section class="hours">
-            <div class="containerHora"></div>
-        </section>
-    </main>
-    <footer></footer>
+    <div class="site-container container-fluid text-white p-0">
+        <header class="container-fluid bg-white d-flex justify-content-between py-2 px-3">
+            <div class="logo">
+              <a href="/">
+                <img src="./img/onlinetime.svg" alt="">
+              </a>
+            </div>
+            <nav class="menu d-flex justify-content-around align-items-center">
+              <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="./index.html">Relógio</a>
+              <a class="btnCronometroPage ml-2 text-body font-weight-bold" href="./cronometro/index.html">Cronômetro</a>
+              <a class="btnContato ml-2 text-body font-weight-bold" href="mailto:julialessandr@gmail.com">Fale Conosco</a>
+            </nav>
+        </header>
+        <main>
+            <section class="sectionRelogio container-sm h-75 bg-transparent">
+                <h1 class="text-center my-4 mt-5">Relógio Online</h1>
+                <div class="containerHora my-4 d-flex justify-content-center align-items-center">
+                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanMain spanHora">00</span></div>
+                    <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanMain spanMinuto">00</span></div>
+                    <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanMain spanSegundo">00</span></div>
+                </div>
+                <!-- <div class="containerHoras row row-cols-1 row-cols-md-2">
+                    <div class="col mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title text-body text-center">São Paulo/Brasil</h4>
+                            <h5 class="card-title text-body text-center">
+                              <span class="spanCard spanHoraSP"></span>
+                              <span class="spanCard spanPontos">:</span>
+                              <span class="spanCard spanMinutoSP"></span>
+                              <span class="spanCard spanPontos">:</span>
+                              <span class="spanCard spanSegundoSP"></span>
+                            </h5>
+                            <h6 class="card-title text-body text-center">03/07/2020</h6>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Los Angeles/US</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraLA"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoLA"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanSegundoLA"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center">03/07/2020</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Madri/Espanha</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraM"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoM"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanSegundoM"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center">03/07/2020</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Tóquio/Japão</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraT"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoT"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanSegundoT"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center">03/07/2020</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Sydney/Austrália</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraS"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoS"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanSegundoS"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center">03/07/2020</h6>
+                        </div>
+                      </div>
+                    </div> 
+                </div>-->
+            </section>
+        </main>
+        <footer></footer>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="./script/script.js"></script>
+    <script src="./script/view.js"></script>
 </body>
 </html>

@@ -4,7 +4,40 @@
     box-sizing: border-box;
 }
 :root{
-    
+    --var-color-bg-site: #0d0f23;
 }
 body{
+    background-color: var(--var-color-bg-site);
+}
+section{
+    min-height: 560px;
+}
+.containerHora{
+    min-height: 340px;
+}
+.cronometro{
+    min-height: 340px;
+}
+.divHora{
+    border-color: #dee2e647!important;
+}
+.spanMain, .spanCronometro{
+    font-size: 4.3rem !important;
+}
+.spanCard{
+    /* font-size: 4.3rem !important; */
+}
+.btn-pause, .btn-parar{
+    display: none;
+}
+@media screen and (max-width: 500px){
+    .btnCronometroPage, .btnRelogioPage, .btnContato{
+        display: none!important;
+    }
+    .spanMain, .spanCronometro{
+        font-size: 3.6rem!important;
+    }
+    .containerHora{
+        margin-top: 0!important;
+    }
 }
