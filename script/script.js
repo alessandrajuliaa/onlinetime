@@ -1,4 +1,3 @@
-
 // VARIÁVEIS CRONOMETRO
 let hh = 0;
 let mm = 0;
@@ -6,23 +5,47 @@ let ss = 0;
 let cronometro = 0;
 
 // FUNÇÕES GERAIS
+function showH(hora, minuto, segundo, hh, mm, ss){
+    hora.innerHTML = `${hh}`;
+    minuto.innerHTML = `${mm}`;
+    segundo.innerHTML = `${ss}`;
+}
 function show(hora, minuto, segundo, hh, mm, ss){
     hora.innerHTML = `${hh < 10 ? '0' + hh : hh}`;
     minuto.innerHTML = `${mm < 10 ? '0' + mm : mm}`;
     segundo.innerHTML = `${ss < 10 ? '0' + ss : ss}`;
 }
 // RELÓGIO FUNÇÕES
-function retornaData(url, showCronometroH, showCronometroM, showCronometroS){
+
+// let urls = new Array(
+//     {url: "http://worldtimeapi.org/api/timezone/Europe/Madrid", 
+//     hora: showHoursRelogio, 
+//     minuto: showMinutesRelogio, 
+//     segundo: showSecondsRelogio
+//     },
+//     {url: "http://worldtimeapi.org/api/timezone/America/Sao_Paulo", 
+//     hora: showHoursRelogioSP, 
+//     minuto: showMinutesRelogioSP, 
+//     segundo: showSecondsRelogioSP
+//     },
+//     {url: "http://worldtimeapi.org/api/timezone/Europe/Madrid", 
+//     hora: showHoursRelogioLA, 
+//     minuto: showMinutesRelogioLA, 
+//     segundo: showSecondsRelogioLA
+//     }, 
+             
+// );
+
+function retornaData(url, showHours, showMinutes, showSeconds){
     fetch(url)
     .then((res) =>{
         return res.json()
     }).then((data)=>{
-        let horaAtual = new Date(data.unixtime * 1000)
-        let hh = horaAtual.getHours();
-        let mm = horaAtual.getMinutes();
-        let ss = horaAtual.getSeconds();
-
-        show(showCronometroH, showCronometroM, showCronometroS, hh, mm, ss);
+        let horaAtual = data.datetime;
+        let hh = horaAtual.slice(11,13);
+        let mm = horaAtual.slice(14,16);
+        let ss = horaAtual.slice(17,19);
+        showH(showHours, showMinutes, showSeconds, hh, mm, ss);
     }) 
 }
 
