@@ -12,7 +12,7 @@ function show(hora, minuto, segundo, hh, mm, ss){
 
 // CRONOMETRO FUNÇÕES
 function star(btnCronometroIniciar, btnCronometroPause, btnCronometroStop){
-    cronometro = setInterval(timer, 10);
+    cronometro = setInterval(timer, 1000);
     btnCronometroIniciar.style.display = "none";
     btnCronometroPause.style.display = "inline-block";
     btnCronometroStop.style.display = "inline-block";
