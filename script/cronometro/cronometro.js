@@ -5,7 +5,7 @@ let ss = 0;
 let cronometro = 0;
 
 function show(hora, minuto, segundo, hh, mm, ss){
-    hora.innerHTML = `${hh < 10 ? '0' + hh : hh}`;
+    hora.innerHTML = `${hh < 10 || hh == 60 ? '0' + hh : hh}`;
     minuto.innerHTML = `${mm < 10 ? '0' + mm : mm}`;
     segundo.innerHTML = `${ss < 10 ? '0' + ss : ss}`;
 }
@@ -49,3 +49,13 @@ function timer(){
     }
     show(showCronometroH, showCronometroM, showCronometroS, hh, mm, ss);
 }
+
+// MENU FUNÇÕES
+document.querySelector('.btnMenu').addEventListener('click', ()=>{
+    document.querySelector('.divMenu').style.display = "flex"
+    document.querySelector('body').style.overflow = 'hidden';
+})
+document.querySelector('.btnClose').addEventListener('click', ()=>{
+    document.querySelector('.divMenu').style.display = "none"
+    document.querySelector('body').style.overflow = 'auto';
+})

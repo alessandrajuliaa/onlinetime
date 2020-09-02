@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/onlinetime.svg" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600&family=Saira+Semi+Condensed:wght@700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/page.css">
     <title>Online Time - Cronômetro</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="site-container container-fluid text-white p-0">
         <header class="container-fluid bg-white d-flex justify-content-between py-2 px-3">
             <div class="logo">
@@ -26,22 +27,41 @@
         </header>
         <main>                  
             <section class="sectionCronometro container-sm h-75 bg-transparent">
-              <div class="containerCronometro">
-                <h1 class="text-center font-weight-bold my-4 mt-5">Cronômetro</h1>
-                <div class="cronometro my-5 d-flex flex-column justify-content-center align-items-center">
-                  <div class="py-5 d-flex justify-content-center align-items-center">
-                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanCronometro spanCronometroHora">00</span></div>
+              <div class="containerCronometro w-75 mx-auto">
+                <h1 class="textTitulo text-center font-weight-bold py-4 m-0 mt-2">Cronômetro</h1>
+
+                <div class="cronometro bg-light rounded my-3  px-3 px-sm-4 px-md-5 d-flex flex-column justify-content-around align-items-center">
+
+                  <div class="d-flex w-100 px-3 bg-dark justify-content-center align-items-center">
+                    <div class="divHora mb-3 d-flex flex-column align-items-center">
+                      <span class="spanCronometro spanCronometroHora spanPomodoroH spanPomodoroMV text-light">00</span>
+                      <span class="spanCronometro spanCronometroHora spanPomodoroT text-light">HOURS</span>
+                    </div>
                     <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
-                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanCronometro spanCronometroMinuto">00</span></div>
+                    <div class="divHora mb-3 d-flex flex-column align-items-center">
+                      <span class="spanCronometro spanCronometroMinuto spanPomodoroH spanPomodoroMV text-light">00</span>
+                      <span class="spanCronometro spanCronometroMinuto spanPomodoroT text-light">MINUTES</span>
+                    </div>
                     <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
-                    <div class="divHora p-1 p-sm-3 border rounded"><span class="spanCronometro spanCronometroSegundo">00</span></div>
+                    <div class="divHora mb-3 d-flex flex-column align-items-center">
+                      <span class="spanCronometro spanCronometroSegundo spanPomodoroH spanPomodoroMV text-light">00</span>
+                      <span class="spanCronometro spanCronometroSegundo spanPomodoroT text-light">SECONDS</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex m-0 py-0">
+                    <div class="btn btnPomodoro btn-iniciar text-success w-100 font-weight-bold">Iniciar</div>
+                    <div class="btn btnPomodoro btn-pause text-info w-100 ml-2 font-weight-bold">Pausar</div>
+                    <div class="btn btnPomodoro btn-parar text-danger w-100 ml-3 font-weight-bold">Parar</div>
+                  </div>
                 </div>
-                <div class="d-flex">
-                  <div class="btn btn-iniciar btn-success w-100 font-weight-bold">Iniciar</div>
-                  <div class="btn btn-pause btn-info w-100 ml-2 font-weight-bold">Pausar</div>
-                  <div class="btn btn-parar btn-danger w-100 ml-2 font-weight-bold">Parar</div>
-                </div>
-                </div>
+              </div>
+              <div class="mt-5">
+                <p class="text-center">O cronômetro do Online Time realiza a contagem do tempo correta em milésimos de segundos.
+                  <br>Como usar: a contagem começa após clicar no botão Iniciar, 
+                  e permite realizar uma pausa no tempo, a partir do clique no Pause,<br>
+                  e permite parar e resetar o tempo contado com o botão Parar.
+                </p>
               </div>
             </section>
         </main>
@@ -63,9 +83,9 @@
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../script/cronometro/cronometro.js"></script>
     <script src="../script/cronometro/cronometro-view.js"></script>
-</body>
+  </body>
 </html>
