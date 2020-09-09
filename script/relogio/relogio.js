@@ -25,12 +25,3 @@ function showHM(url, hora, minuto, dia){
         dia.textContent = `${horaAtual.slice(8,10)}/${horaAtual.slice(5,7)}/${horaAtual.slice(0,4)}`;
     })    
 }
-// MENU FUNÇÕES
-document.querySelector('.btnMenu').addEventListener('click', ()=>{
-    document.querySelector('.divMenu').style.display = "flex"
-    document.querySelector('body').style.overflow = 'hidden';
-})
-document.querySelector('.btnClose').addEventListener('click', ()=>{
-    document.querySelector('.divMenu').style.display = "none"
-    document.querySelector('body').style.overflow = 'auto';
-})

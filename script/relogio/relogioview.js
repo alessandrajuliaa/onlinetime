@@ -8,9 +8,9 @@ let urlLosAngeles = "http://worldtimeapi.org/api/timezone/America/Los_Angeles"
 let urlToquio = "http://worldtimeapi.org/api/timezone/Asia/Tokyo"
 let urlSydney = "http://worldtimeapi.org/api/timezone/Australia/Sydney";
 
-let showHoursLocal = document.querySelector('.spanHora');
-let showMinutesLocal = document.querySelector('.spanMinuto');
-let showSecondsLocal = document.querySelector('.spanSegundo');
+let showHoursLocal = document.querySelector('#spanHora');
+let showMinutesLocal = document.querySelector('#spanMinuto');
+let showSecondsLocal = document.querySelector('#spanSegundo');
 
 let showHoursSP = document.querySelector('.spanHoraSP');
 let showMinutesSP = document.querySelector('.spanMinutoSP');

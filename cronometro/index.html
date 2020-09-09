@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176146646-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176146646-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="cronometro, tempo, gerenciador de tempo, contagem em segundos"/>
+    <meta name="description" content="O cronômetro do Online Time realiza a contagem do tempo correta em milésimos de segundos."/> 
     <link rel="icon" href="./img/onlinetime.svg" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600&family=Saira+Semi+Condensed:wght@700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/page.css">
     <title>Online Time - Cronômetro</title>
@@ -17,8 +28,9 @@
               <img src="../img/onlinetime.svg" alt="">
             </div>
             <nav class="menu d-flex justify-content-around align-items-center">
-              <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="../index.html">Relógio</a>
-              <a class="btnCronometroPage ml-2 text-body font-weight-bold" href="./index.html">Cronômetro</a>
+              <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="../index.html">Pomodoro</a>
+              <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="../relogio/index.html">Relógio</a>
+              <a class="btnCronometroPage ml-2 text-body font-weight-bold" href="../cronometro/index.html">Cronômetro</a>
               <a class="btnContato ml-2 text-body font-weight-bold" href="mailto:contato@onlinetime.com.br">Fale Conosco</a>
             </nav>
             <div class="btnMenu">
@@ -30,22 +42,21 @@
               <div class="containerCronometro w-75 mx-auto">
                 <h1 class="textTitulo text-center font-weight-bold py-4 m-0 mt-2">Cronômetro</h1>
 
-                <div class="cronometro bg-light rounded my-3  px-3 px-sm-4 px-md-5 d-flex flex-column justify-content-around align-items-center">
-
-                  <div class="d-flex w-100 px-3 bg-dark justify-content-center align-items-center">
+                <div class="cronometro bg-light rounded my-3 mb-5 p-3 p-sm-4 p-md-5 pb-2 d-flex flex-column justify-content-between align-items-center">
+                  <div class="pomodoroHora d-flex w-100 px-3 bg-dark justify-content-center align-items-center">
                     <div class="divHora mb-3 d-flex flex-column align-items-center">
-                      <span class="spanCronometro spanCronometroHora spanPomodoroH spanPomodoroMV text-light">00</span>
-                      <span class="spanCronometro spanCronometroHora spanPomodoroT text-light">HOURS</span>
+                      <span class="spanCronometro spanPomodoroH text-light" id="spanCronometroHora">00</span>
+                      <span class="spanPomodoroT text-light">HOURS</span>
                     </div>
-                    <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                    <div class="divDoisPontos mb-3 display-3 p-2 d-flex justify-content-center align-items-center">:</div>
                     <div class="divHora mb-3 d-flex flex-column align-items-center">
-                      <span class="spanCronometro spanCronometroMinuto spanPomodoroH spanPomodoroMV text-light">00</span>
-                      <span class="spanCronometro spanCronometroMinuto spanPomodoroT text-light">MINUTES</span>
+                      <span class="spanCronometro spanPomodoroH text-light" id="spanCronometroMinuto">00</span>
+                      <span class="spanPomodoroT text-light">MINUTES</span>
                     </div>
-                    <div class="divDoisPontos display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                    <div class="divDoisPontos mb-3 display-3 p-2 d-flex justify-content-center align-items-center">:</div>
                     <div class="divHora mb-3 d-flex flex-column align-items-center">
-                      <span class="spanCronometro spanCronometroSegundo spanPomodoroH spanPomodoroMV text-light">00</span>
-                      <span class="spanCronometro spanCronometroSegundo spanPomodoroT text-light">SECONDS</span>
+                      <span class="spanCronometro spanPomodoroH text-light" id="spanCronometroSegundo">00</span>
+                      <span class="spanPomodoroT text-light">SECONDS</span>
                     </div>
                   </div>
 
@@ -56,10 +67,10 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-5">
-                <p class="text-center">O cronômetro do Online Time realiza a contagem do tempo correta em milésimos de segundos.
-                  <br>Como usar: a contagem começa após clicar no botão Iniciar, 
-                  e permite realizar uma pausa no tempo, a partir do clique no Pause,<br>
+              <div class="mt-5 pt-5 w-75 mx-auto">
+                <p class="text-justify">O cronômetro do Online Time realiza a contagem do tempo correta em milésimos de segundos.</p>
+                <p class="text-justify">Como usar: a contagem começa após clicar no botão Iniciar, 
+                  e permite realizar uma pausa no tempo, a partir do clique no Pause,
                   e permite parar e resetar o tempo contado com o botão Parar.
                 </p>
               </div>
@@ -75,8 +86,9 @@
       </div>
       <div class="h-75 d-flex flex-column justify-content-center align-items-center">
         <div class="menu d-flex flex-column justify-content-center align-items-center">
-          <a class="btnRelogioMenu mb-2 text-white font-weight-bold" href="../index.html">Relógio</a>
-          <a class="btnCronometroMenu mb-2 text-white font-weight-bold" href="./index.html">Cronômetro</a>
+          <a class="btnRelogioMenu mb-2 text-white font-weight-bold" href="../index.html">Pomodoro</a>
+          <a class="btnRelogioMenu mb-2 text-white font-weight-bold" href="../relogio/index.html">Relógio</a>
+          <a class="btnCronometroMenu mb-2 text-white font-weight-bold" href="../cronometro/index.html">Cronômetro</a>
           <a class="btnContatoMenu mb-2 text-white font-weight-bold" href="mailto:contato@onlinetime.com.br">Fale Conosco</a>
         </div>
       </div>
@@ -87,5 +99,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../script/cronometro/cronometro.js"></script>
     <script src="../script/cronometro/cronometro-view.js"></script>
+    <script src="../script/script.js"></script>
   </body>
 </html>

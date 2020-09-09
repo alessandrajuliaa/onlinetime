@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176146646-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176146646-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="relogio, relogio online, tempo, hora certa, hora, hora atual, horário, fuso horário"/>
+    <meta name="description" content="Hora certa de acordo com o seu fuso horário."/> 
+    <link rel="icon" href="../img/onlinetime.svg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/page.css">
+    <title>Online Time - Relógio</title>
+  </head>
+  <body>
+      <div class="site-container site container-fluid text-white p-0">
+          <header class="container-fluid bg-white d-flex justify-content-between py-2 px-3">
+              <div class="logo">
+                <a href="/">
+                  <img id="logo" src="../img/onlinetime.svg" alt="">
+                </a>
+              </div>
+              <nav class="menu d-flex justify-content-around align-items-center">
+                <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="../index.html">Pomodoro</a>
+                <a class="btnRelogioPage ml-2 text-body font-weight-bold" href="../relogio/index.html">Relógio</a>
+                <a class="btnCronometroPage ml-2 text-body font-weight-bold" href="../cronometro/index.html">Cronômetro</a>
+                <a class="btnContato ml-2 text-body font-weight-bold" href="mailto:contato@onlinetime.com.br">Fale Conosco</a>
+              </nav>
+              <div class="btnMenu">
+                <img src="../img/menu.svg" alt="">
+              </div>
+          </header>
+          <main>
+              <section class="sectionRelogio container-sm h-75 bg-transparent">
+                <div class="containerRelogio w-75 pb-5 mx-auto">
+                  <h1 class="textTitulo text-center font-weight-bold py-4 m-0 mt-2">Relógio</h1>
+
+                  <div class="pomodoro bg-light rounded my-3 mb-5 p-3 p-sm-4 p-md-5 d-flex flex-column justify-content-between align-items-center">
+                    <div class="pomodoroHora d-flex w-100 px-3 bg-dark justify-content-center align-items-center">
+                      <div class="divHora mb-3 d-flex flex-column align-items-center">
+                        <span class="spanRelogio spanPomodoroH text-light" id="spanHora">00</span>
+                        <span class="spanPomodoroT text-light">HOURS</span>
+                      </div>
+                      <div class="divDoisPontos mb-3 display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                      <div class="divHora mb-3 d-flex flex-column align-items-center">
+                        <span class="spanRelogio spanPomodoroH text-light" id="spanMinuto">00</span>
+                        <span class="spanPomodoroT text-light">MINUTES</span>
+                      </div>
+                      <div class="divDoisPontos mb-3 display-3 p-2 d-flex justify-content-center align-items-center">:</div>
+                      <div class="divHora mb-3 d-flex flex-column align-items-center">
+                        <span class="spanRelogio spanPomodoroH text-light" id="spanSegundo">00</span>
+                        <span class="spanPomodoroT text-light">SECONDS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="containerHoras mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                    <div class="col mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title text-body text-center">São Paulo/Brasil</h4>
+                            <h5 class="card-title text-body text-center">
+                              <span class="spanCard spanHoraSP"></span>
+                              <span class="spanCard spanPontos">:</span>
+                              <span class="spanCard spanMinutoSP"></span>
+                            </h5>
+                            <h6 class="card-title text-body text-center dataSP"></h6>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Los Angeles/US</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraLA"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoLA"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center dataLA"></h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Madri/Espanha</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraM"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoM"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center dataM"></h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Tóquio/Japão</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraT"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoT"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center dataT"></h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Sydney/Austrália</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraS"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoS"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center dataS"></h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title text-body text-center">Lisboa/Portugal</h4>
+                          <h5 class="card-title text-body text-center">
+                            <span class="spanCard spanHoraL"></span>
+                            <span class="spanCard spanPontos">:</span>
+                            <span class="spanCard spanMinutoL"></span>
+                          </h5>
+                          <h6 class="card-title text-body text-center dataL"></h6>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="mt-5  w-75 mx-auto">
+                  <p class="text-center">Utilizamos o seu endereço de IP para detectar a sua localização, e fornecer a hora <br>certa de acordo com o seu fuso horário.</p>
+                </div>
+              </section>
+          </main>
+          <footer class="mt-5 d-flex flex-column align-items-center justify-content-end">
+            <p class="m-0 mb-1">Copyright © Online Time. Todos os Direitos Reservados.</p>
+          </footer>
+      </div>
+      <div class="divMenu flex-column" id="divMenu">
+        <div class="d-flex flex-column justify-content-center align-items-end p-3">
+          <div class="btnClose btn d-flex justify-content-center align-items-center text-white font-weight-bold bg-danger p-2">X</div>
+        </div>
+        <div class="h-75 d-flex flex-column justify-content-center align-items-center">
+          <div class="menu d-flex flex-column justify-content-center align-items-center">
+            <a class="btnRelogioMenu mb-2 text-white font-weight-bold" href="../index.html">Pomodoro</a>
+            <a class="btnRelogioMenu mb-2 text-white font-weight-bold" href="../relogio/index.html">Relógio</a>
+            <a class="btnCronometroMenu mb-2 text-white font-weight-bold" href="../cronometro/index.html">Cronômetro</a>
+            <a class="btnContatoMenu mb-2 text-white font-weight-bold" href="mailto:contato@onlinetime.com.br">Fale Conosco</a>
+          </div>
+        </div>
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="../script/relogio/relogio.js"></script>
+      <script src="../script/relogio/relogioview.js"></script>
+      <script src="../script/script.js"></script>
+  </body>
+</html>

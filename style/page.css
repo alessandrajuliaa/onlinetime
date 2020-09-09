@@ -1,5 +1,5 @@
 *{
-    font-family: 'Display', sans-serif;
+    font-family: 'Play', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box!important;
@@ -16,12 +16,15 @@ body{
 section{
     min-height: 560px;
 }
+.containerRelogio{
+    min-height: 525px;
+}
 .textTitulo{
     font-size: 2.5rem!important;
 }
-.spanPomodoro, .spanCronometro{
-    font-family: 'Oxanium';
-    font-size: 8.5rem !important;
+.spanPomodoro, .spanCronometro, .spanRelogio{
+    font-family: 'Inter', sans-serif;
+    font-size: 8.2rem !important;
 }
 .btnPomodoro{
     font-size: 1.4rem !important;
@@ -65,6 +68,27 @@ footer{
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.767);
 }
+@media screen and (max-width: 1000px){
+    .spanRelogio, .spanCronometro{
+        font-size: 6rem !important;
+    }
+    .spanPomodoro{
+        font-size: 7.4rem !important;
+    }
+}
+@media screen and (max-width: 850px){
+    .spanRelogio, .spanCronometro{
+        font-size: 5.6rem !important;
+    }
+    .spanPomodoro{
+        font-size: 7rem !important;
+    }
+}
+@media screen and (max-width: 770px){
+    .spanRelogio, .spanCronometro{
+        font-size: 4.4rem !important;
+    }
+}
 @media screen and (max-width: 500px){
     .btnCronometroPage, .btnRelogioPage, .btnContato{
         display: none!important;
@@ -75,6 +99,9 @@ footer{
     /* .spanMain, .spanCronometro{
         font-size: 3.6rem!important;
     } */
+    .spanRelogio, .spanCronometro{
+        font-size: 3.2rem !important;
+    }
     .spanPomodoro{
         font-size: 6rem !important;
     }
@@ -85,7 +112,8 @@ footer{
         font-size: 1.5rem!important;
     }
     .spanPomodoroT{
-        font-size: 0.7rem !important;
+        margin-top: -15px;
+        font-size: 0.8rem !important;
     }
     .containerHora{
         margin-top: 0!important;
@@ -106,11 +134,11 @@ footer{
     .pomodoroHora{
         flex-direction: column;
     }
+    .spanRelogio, .spanCronometro, .spanPomodoro{
+        font-size: 5.6rem !important;
+    }
     .spanPomodoroH{
         line-height: 1.3 !important;
-    }
-    .spanPomodoroT{
-        margin-top: -15px;
     }
     .divDoisPontos{
         display: none!important;

@@ -1,5 +1,5 @@
 let pomodoro = 0;
-let tempos = [15000,3000,15000,3000,15000,3000,15000,18000];
+let tempos = [1500000,300000,1500000,300000,1500000,300000,1500000,1800000];
 let i = 0;
 // [1500000,300000,1500000,300000,1500000,300000,1500000,1800000];
 
@@ -52,7 +52,7 @@ function showP(minuto, segundo, mm, ss){
 }
 // BOTÕES FUNÇÕES
 function star(btnPomodoroIniciar, btnPomodoroPause, btnPomodoroStop){
-    pomodoro = setInterval(timer,80);
+    pomodoro = setInterval(timer,1000);
     btnPomodoroIniciar.style.display = "none";
     btnPomodoroPause.style.display = "inline-block";
     btnPomodoroStop.style.display = "inline-block";
